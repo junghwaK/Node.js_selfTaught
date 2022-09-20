@@ -1,5 +1,6 @@
 const express = require('express');
 
+//실행하게될 함수
 const router = express.Router();
 
 router.get('/add-product', (req, res, next) => {
