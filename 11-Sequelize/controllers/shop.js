@@ -18,8 +18,9 @@ exports.getProducts = (req, res, next) => {
 
 exports.getProduct = (req, res, next) => {
   const prodId = req.params.productId;
+  //prodId를 그대로두면 상세정보들을 볼 수 있다. 
   Product.findById(prodId)
-    .then(([product]) => {
+    .then(product => {
       res.render('shop/product-detail', {
         product: product[0],
         pageTitle: product.title,
