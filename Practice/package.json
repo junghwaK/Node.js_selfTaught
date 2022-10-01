@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.23.2",
+    "sequelize-cli": "^6.5.1"
+  },
+  "name": "practice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
