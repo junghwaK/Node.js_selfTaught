@@ -7,6 +7,6 @@ exports.register = (req, res) => {
         //id 찾기
         console.log("result[0] : ", result[0]);
         console.log("id : ", result[0].id);
-        res.render("admin", {data: result});
+        res.render("index", {data: result});
     });
 }

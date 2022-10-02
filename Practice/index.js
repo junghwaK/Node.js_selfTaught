@@ -8,10 +8,10 @@ app.use(express.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 const router = require("./routes");
-const useRouter = require("./routes/admin");
+// const useRouter = require("./routes/admin");
 
 app.use('/Surf', router);
 
-app.listen(prot, () => {
+app.listen(port, () => {
     console.log("Server Port : ", port);
 });

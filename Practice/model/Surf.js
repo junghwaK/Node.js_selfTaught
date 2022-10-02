@@ -24,4 +24,4 @@ const Surf = (Sequelize, DataTypes) => {
     return model;
 }
 
-module.export = Surf;
+module.exports = Surf;
