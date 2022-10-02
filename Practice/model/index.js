@@ -13,6 +13,7 @@ const sequelize = new Sequelize(
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+//table 개수당 있어야함.
 db.Search = require('./Search')(sequelize, Sequelize);
 
 module.exports = db;
