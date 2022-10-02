@@ -1,4 +1,4 @@
-const Search = (Sequelize, DataTypes) => {
+const Surf = (Sequelize, DataTypes) => {
     const model = Sequelize.define('pr',{
         id: {
             type: DataTypes.INTEGER,
@@ -24,4 +24,4 @@ const Search = (Sequelize, DataTypes) => {
     return model;
 }
 
-module.export = Search;
+module.export = Surf;
