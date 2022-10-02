@@ -7,6 +7,21 @@
     <title>Search for NFT</title>
 </head>
 <body>
-    
+    <form action="http://localhost:8000/" method="get" id="form_surf">
+        <fieldset>
+            <legend>NFT검색하기</legend>
+            <input name="surf" type="text" placeholder="NAME or SYMBOL">
+            <button type="button">검색</button>
+        </fieldset>
+    </form>
+    <table id="surf_result" cellspacing="0" cellpadding="5">
+        <thead>
+            <tr>
+                <th>Num</th>
+                <th>Name</th>
+                <th>Symbol</th>
+            </tr>
+        </thead>
+    </table>
 </body>
 </html>
