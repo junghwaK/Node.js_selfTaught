@@ -24,4 +24,5 @@ const Surf = (Sequelize, DataTypes) => {
     return model;
 }
 
+//갓갓 시하가 알려줘서 s붙여서 살아난 내 Surf...
 module.exports = Surf;
