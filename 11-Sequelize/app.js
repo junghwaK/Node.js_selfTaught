@@ -21,6 +21,17 @@ const shopRoutes = require('./routes/shop');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+//들어오는 요청에 대해 미들웨어로 등록
+app.use((req, res, next) => {
+    User.findByPk(1)
+    .then(user => {
+        //destroy같은것도 할수 있게됨.
+        req.user = user;
+        next();
+    })
+    .catch(err => console.log(err));
+});
+
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
@@ -50,7 +61,7 @@ sequelize
     return user;
 })
 .then(user => {
-    console.log(user);
+    // console.log(user);
     app.listen(3000);
 })
 .catch(err => {

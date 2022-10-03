@@ -9,8 +9,8 @@ const User = sequelize.define('user',{
         autoIncrement: true,
         primaryKey: true
       },
-    name: {type: Sequelize.STRING},
-    email: {type: Sequelize.STRING}
+     name: Sequelize.STRING,
+     email: Sequelize.STRING
       
     },
     {
