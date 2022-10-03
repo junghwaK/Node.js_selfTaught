@@ -29,6 +29,24 @@
             })     
             
         }
+
+        function deleteNft(id){
+            // console.log(id);
+            axios({
+                method: 'delete',
+                url: 'http://localhost:8000/Surf/destroy',
+                //앞 id = req.body 뒤는 함수(id)이용하여 인자로 넣어줌
+                data: {id : id}
+            })
+            .then((response) => {
+                return response.data;
+            })
+            .then((data) => {
+                alert(data);
+                $('#tr_' + id).remove();
+            })
+        }
+
     </script>
 </head>
 <body>
@@ -52,10 +70,11 @@
             for (let i = 0; i < data.length; i++){
         %>
           
-            <tr>
+            <tr id="tr_<%=data[i].id%>">
                 <td><%=data[i].id%></td>
                 <td><%=data[i].name%></td>
                 <td><%=data[i].symbol%></td>
+                <td><button type="button" onclick="deleteNft('<%=data[i].id%>');">삭제</button></td>
             </tr>
         <%
             }

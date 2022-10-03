@@ -6,4 +6,5 @@ router.get("/", surf.register);
 // router.post("/register", surf.register);
 router.get("/Surf", surf.getInfo);
 router.post("/Surf/insert", surf.postInsert);
+router.delete("/Surf/destroy", surf.destroy);
 module.exports = router;

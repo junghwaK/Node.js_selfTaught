@@ -27,3 +27,9 @@ exports.postInsert = async (req, res) => {
     console.log(result);
     res.send(result);
 }
+
+
+exports.destroy = async (req, res) => {
+    let result = await models.Surf.destroy({where :{id: req.body.id}});
+    res.send('삭제되었습니다');
+}
