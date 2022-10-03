@@ -5,13 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search for NFT</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+        function insertNft(){
+            let form = document.getElementById("form_surf");
+            axios({
+                method: 'post',
+                url: 'http://localhost:8000/Surf/insert',
+                data: {
+                    name: form.name.value,
+                    symbol: form.symbol.value
+                }
+            })
+            .then((rep) => {
+                return rep.data; 
+            })
+            .then((data) => {
+                console.log(data);
+                let html = "<tr><td>" + data.id + "</td><td>" + data.name + "</td><td>" + data.symbol + "</td></tr>";
+                $("table").append(html);
+            })     
+            
+        }
+    </script>
 </head>
 <body>
     <form action="http://localhost:8000/Surf" method="get" id="form_surf">
         <fieldset>
-            <legend>NFT검색하기</legend>
+            <legend>NFT검색하기 / 추가하기</legend>
             <input name="surf" type="text" placeholder="NAME or SYMBOL">
-            <button type="submit">검색</button>
+            <button type="submit">검색</button> / 
+            <input name="name" type="text" placeholder="INSERT NAME">
+            <input name="symbol" type="text" placeholder="INSERT SYMBOL">
+            <button type="button" onclick="insertNft();">추가</button>
         </fieldset>
     </form>
     <table id="surf_result" cellspacing="0" cellpadding="5">
@@ -25,9 +53,9 @@
         %>
           
             <tr>
-                <td><%data[i].id%></td>
-                <td><%data[i].name%></td>
-                <td><%data[i].symbol%></td>
+                <td><%=data[i].id%></td>
+                <td><%=data[i].name%></td>
+                <td><%=data[i].symbol%></td>
             </tr>
         <%
             }

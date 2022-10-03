@@ -10,6 +10,7 @@ const Surf = (Sequelize, DataTypes) => {
             type: DataTypes.STRING(225),
             allowNull: false
         },
+        //symbol은 없을수도 있기때문에 ture
         symbol: {
             type: DataTypes.STRING(225),
             allowNull: false
