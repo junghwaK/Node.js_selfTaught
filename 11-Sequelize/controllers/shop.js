@@ -12,17 +12,26 @@ exports.getProducts = (req, res, next) => {
   })
   .catch(err=>{
     console.log(err);
-  });
-  
+  })
 };
 
 exports.getProduct = (req, res, next) => {
   const prodId = req.params.productId;
+  //findAll 은 배열에 요소 하나만 있어도 정의에 따라서 다수의 요소를 준다. 
+  // Product.findAll({where: {id: prodId}})
+  // .then(products => {
+  //   res.render('shop/product-detail', {
+  //     product: products[0],
+  //     pageTitle: products[0].title,
+  //     path: '/products'
+  //   })
+  // })
+  // .catch(err => console.log(err));
   //prodId를 그대로두면 상세정보들을 볼 수 있다. 
-  Product.findById(prodId)
+  Product.findByPk(prodId)
     .then(product => {
       res.render('shop/product-detail', {
-        product: product[0],
+        product: product,
         pageTitle: product.title,
         path: '/products'
       });
