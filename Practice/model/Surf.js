@@ -19,7 +19,7 @@ const Surf = (Sequelize, DataTypes) => {
     {
         timestamps: false,
         tableName: 'pr',
-        freeseTableName: true
+        freezeTableName: true
     }
     );
     return model;

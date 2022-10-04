@@ -9,6 +9,7 @@ exports.register = async (req, res) => {
     res.render("index", {data: result});
 }
 
+//검색하기(정보가져오기)-mysql쿼리문이용
 exports.getInfo = async (req, res) => {
     let query =`select * from pr where name like '%${req.query.surf}%' or symbol like '%${req.query.surf}%'`;
     let result = await models.sequelize.query(query);
@@ -17,6 +18,7 @@ exports.getInfo = async (req, res) => {
 
 }
 
+//데이터 추가하기
 exports.postInsert = async (req, res) => {
     console.log(req.body);
     let object = {

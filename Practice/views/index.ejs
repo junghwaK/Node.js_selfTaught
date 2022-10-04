@@ -24,8 +24,10 @@
             })
             .then((data) => {
                 console.log(data);
-                let html = "<tr><td>" + data.id + "</td><td>" + data.name + "</td><td>" + data.symbol + "</td></tr>";
+                let html = "<tr id='tr_" + data.id + "'><td>" + data.id + "</td><td>" + data.name + "</td><td>" + data.symbol +  "<td><button onclick='deleteNft(" + data.id + ")'>삭제</button></td>" + "</td></tr>";
                 $("table").append(html);
+                form.name.value = "";
+                form.symbol.value = "";
             })     
             
         }
@@ -50,11 +52,13 @@
     </script>
 </head>
 <body>
-    <form action="http://localhost:8000/Surf" method="get" id="form_surf">
+    <form action="http://localhost:8000/Surf" >
         <fieldset>
             <legend>NFT검색하기 / 추가하기</legend>
             <input name="surf" type="text" placeholder="NAME or SYMBOL">
-            <button type="submit">검색</button> / 
+            <button type="submit">검색</button> 
+    </form>
+    <form  method="get"  id="form_surf">
             <input name="name" type="text" placeholder="INSERT NAME">
             <input name="symbol" type="text" placeholder="INSERT SYMBOL">
             <button type="button" onclick="insertNft();">추가</button>
