@@ -8,6 +8,7 @@
 </head>
 <body>
     <form action="http://localhost:8000/Surf" method="get" id="form_surf">
+        <a href="/"><img src="/img/point.png" style="width: 50px;"></a>
         <fieldset>
             <legend>NFT검색하기</legend>
             <input name="surf" type="text" placeholder="NAME or SYMBOL">
@@ -19,7 +20,6 @@
     <% } else {%>
     <table id="surf_result" cellspacing="0" cellpadding="5">
             <tr>
-                <th>Num</th>
                 <th>Name</th>
                 <th>Symbol</th>
             </tr>
@@ -28,7 +28,6 @@
         %>
           
             <tr>
-                <td><%=data[i].id%></td>
                 <td><%=data[i].name%></td>
                 <td><%=data[i].symbol%></td>
             </tr>

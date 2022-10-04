@@ -23,7 +23,7 @@
                 return rep.data; 
             })
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 let html = "<tr id='tr_" + data.id + "'><td>" + data.id + "</td><td>" + data.name + "</td><td>" + data.symbol +  "<td><button onclick='deleteNft(" + data.id + ")'>삭제</button></td>" + "</td></tr>";
                 $("table").append(html);
                 form.name.value = "";

@@ -4,8 +4,7 @@ const models = require('../model');
 exports.register = async (req, res) => {
     let result = await models.Surf.findAll();
     //id 찾기
-    console.log("result[0] : ", result[0]);
-    // console.log("id : ", result[0].id);
+    // console.log("result[0] : ", result[0]);
     res.render("index", {data: result});
 }
 
@@ -20,7 +19,7 @@ exports.getInfo = async (req, res) => {
 
 //데이터 추가하기
 exports.postInsert = async (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     let object = {
         name: req.body.name,
         symbol: req.body.symbol
