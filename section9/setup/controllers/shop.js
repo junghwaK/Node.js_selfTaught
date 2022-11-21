@@ -14,9 +14,12 @@ exports.getProduct = (req, res, next) => {
   //extract that dynamic path segment or the value it holds to be precise.
   const prodId = req.params.productId;
   Product.findById(prodId, product => {
-    console.log(product);
+    res.render('shop/product-detail', {
+      product: product,
+      pageTitle: product.title,
+      path: '/products'
+    });
   });
-  res.redirect('/');
 };
 
 exports.getIndex = (req, res, next) => {
